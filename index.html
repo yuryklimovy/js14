@@ -4,9 +4,38 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="js/tmpl.js" charset="utf-8"></script>
+  <script src="js/script.js" charset="utf-8"></script>
 </head>
 <body>
+  <div class="main">
+    <h1>Тест по программированию</h1>
+    <form action="" class="testForm">
+      <div class="buttonWraper">
+        <input class="button" type="button" value="Проверить мои результаты">
+      </div>
 
-  <script src="js/script.js" charset="utf-8"></script>
+    </form>
+  </div>
+  <div class="modal">
+
+  </div>
+  <div class="modal-window">
+
+  </div>
+  <script type="text/tmpl" id="tmpl">
+  <% for ( var i = 0; i < questions.length; i++ ) { %>
+    <div class="questionsWraper">
+      <h3><%= questions[i].title%></h3>
+      <% for ( var j = 0; j < questions[i].answers.length; j++ ) { %>
+        <div class="answerWraper">
+          <input class="checkbox" id="check<%=i%><%=j%>" type="checkbox">
+          <label class="label" for="check<%=i%><%=j%>"><%= questions[i].answers[j].text%></label>
+        </div>
+      <% } %>
+    </div>
+    <% } %>
+  </script>
 </body>
 </html>
