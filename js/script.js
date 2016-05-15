@@ -66,6 +66,7 @@ $(function() {
 
         if ($(id + i + j)[0].checked == data.questions[i].answers[j].correct) {
           result[i] = result[i] + 1;
+          $(id + i + j)[0].checked = false;
         }
       }
     }
